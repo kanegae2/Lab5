@@ -12,27 +12,90 @@ public class BankAccount {
     /*
      * You may want to use this to distinguish between different kinds of accounts.
      */
+
+    /**
+     *
+      */
     public enum BankAccountType {
+        /**
+         *
+         */
         CHECKINGS,
+        /**
+         *
+         */
         SAVINGS,
+        /**
+         *
+         */
         STUDENT,
+        /**
+         *
+         */
         WORKPLACE
     }
 
+    /**
+     *
+     */
     private int accountNumber;
-    public BankAccountType accountType;
+    /**
+     *
+     */
+    private BankAccountType accountType;
+    /**
+     *
+     */
     private double accountBalance;
+    /**
+     *
+     */
     private String ownerName;
-    public double interestRate;
+    /**
+     *
+     */
+    private double interestRate;
+    /**
+     *
+     */
     private double interestEarned;
 
+    /**
+     * This is a constructor.
+     * @param name This is the name.
+     * @param accountCategory This is the ammount category.
+     */
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        this.ownerName = name;
+        this.accountType = accountCategory;
+        Bank.totalAccounts++;
     }
 
     /*
      * Implement getters and setters as appropriate for private variables.
      */
+
+    /**
+     * THis is the account balance returned.
+     * @return It returns it.
+     */
+    public double getAccountBalance(){
+        return this.accountBalance;
+    }
+
+    /**
+     *
+     * @param name This is the parameter.
+     */
+    public void setOwnerName(final String name) {
+        this.ownerName = name;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getAccountNumber(){
+        return this.accountNumber;
+    }
 }
